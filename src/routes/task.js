@@ -84,6 +84,7 @@ router.patch('/tasks/all_completed', auth, async_errors(async (req, res) => {
 }))
 
 router.post('/tasks', auth, async_errors(async (req, res) => {
+   if(req.user == nullI) return res.send('Please login!- tasks can only be created by loggedin users!')
    const task = new Tasks({
       ...req.body,
       owner: req.user._id
