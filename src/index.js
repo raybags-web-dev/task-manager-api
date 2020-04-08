@@ -14,8 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(task_router);
 app.use(user_router);
 
-const port_value = config.get('NODE_ENV');
-const port = process.env.PORT || port_value
-app.listen(port, () => { console.log(`Connected: listening on port ${port_value}`) });
+const port = process.env.PORT || 4000
+app.listen(port, () => { console.log(`Connected: listening on port ${port}`) });
 
 
