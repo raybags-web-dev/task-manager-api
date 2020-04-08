@@ -1,0 +1,8 @@
+{
+   "Developer":"Baguma-Ray",
+   "name": "Task manager app",
+   "NODE_ENV": 4000,
+   "mail": {
+      "host": "dev-mail-server"
+   }
+}

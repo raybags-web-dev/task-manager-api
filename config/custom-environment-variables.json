@@ -1,0 +1,8 @@
+{
+   "mail": {
+      "password": "app_password",
+      "sendGrid_api_key": "app_send_grid",
+      "db_connection_string":"db",
+      "secret_key": "secret_key_ref"
+   }
+}
