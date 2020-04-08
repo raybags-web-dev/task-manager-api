@@ -7,8 +7,9 @@ exports.async_errors = function (handler) {
 
          next()
 
-         res.status(500).send({ ex: { error: ex.message, message: 'Action could not be completed' } });
-         
+         res.status(500).send({ ex: { Error: ex.message, Message: 'Action could not be completed' } });
+         console.log(ex.message)
+
       }
    }
 }

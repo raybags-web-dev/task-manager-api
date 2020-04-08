@@ -17,7 +17,6 @@ const { async_errors } = require('../../middleware/errorHandler');
 router.get('/users/me', auth, async_errors(async (req, res) => {
    if (req.user == null) return res.status(200).send('This profile could not be found');
    res.send(req.user)
-
 }));
 
 router.post('/users/login', async_errors(async (req, res) => {
@@ -92,9 +91,10 @@ router.delete('/users/me/avatar', auth, async (req, res) => {
 });
 
 router.get('/users/:id/avatar', async_errors(async (req, res) => {
+
    const user = await User.findById(req.params.id)
 
-   if (!user || !user.avatar) throw new Error();
+   if (!user || !user.avatar) throw new Error('Please upload a profile image');
 
    res.set('Content-Type', 'image/png');
    res.send(user.avatar);
