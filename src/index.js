@@ -2,7 +2,6 @@ const express = require('express');
 const config = require('config');
 
 require('../src/db/mongoose');
-require('../middleware/stat-up')();
 
 const { task_router } = require('../src/routes/task');
 const { user_router } = require('../src/routes/user');
